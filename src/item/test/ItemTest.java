@@ -1,0 +1,121 @@
+package item.test;
+
+import static org.junit.Assert.*;
+import item.Item;
+
+import java.util.*;
+
+import order.OrderDetail;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class ItemTest {
+	OrderDetail orderDetail;
+	Item item;
+
+		Map<String, List<String>> itemList = new HashMap<String, List<String>>();
+			List<String> listOne = new ArrayList<String>();
+			List<String> listTwo = new ArrayList<String>();
+			List<String> listThree = new ArrayList<String>();
+			
+
+
+	@Before
+	public void setUp() throws Exception {
+		listOne.add("10");
+		listOne.add("100");
+		listOne.add(" logitech mouse");
+		listTwo.add("65");
+		listTwo.add("5000");
+		listTwo.add(" hp printer");
+		listThree.add("50");
+		listThree.add("20000");
+		listThree.add("lenovo desktop");
+		itemList.put("mouse",listOne);
+		itemList.put("printer",listTwo);
+		itemList.put("desktop",listThree);
+		
+		item =new Item();
+		
+		
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*@Test
+	public void testShippingWeight() {
+		
+		
+	}
+
+	@Test
+	public void testSetShippingWeight() {
+		fail("Not yet implemented");
+	}*/
+
+	@Test
+	public void testDescription() {
+		
+		String expectResult="hp printer";
+		item.setDescription(expectResult);
+		String actualResult=item.getDescription();
+		assertEquals(expectResult,actualResult);
+		
+		
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void testDescriptionNull() {
+		item =new Item();
+		String expectResult=null;
+		item.setDescription(expectResult);
+		
+		
+		
+	}
+
+	
+
+	
+
+	@Test
+	public void testGetOrderdetail() {
+		orderDetail=new OrderDetail();
+		item.setOrderDetail(orderDetail);
+		OrderDetail orderRef=item.getOrderDetail();
+		assertTrue(orderRef instanceof OrderDetail);
+		
+	}
+
+	@Test(expected=IllegalArgumentException.class)
+	public void testSetOrderdetail() {
+		orderDetail=null;
+		item.setOrderDetail(orderDetail);
+		
+	}
+
+		
+		
+
+
+	@Test
+	public void testGetPriceForQuantity() {
+		item.setDescription("hp printer");
+		item.setShippingWeight(Double.parseDouble("65"));
+		String expectResult="5000";
+		String actualResult=
+		
+		
+		
+		
+	}
+
+	@Test
+	public void testGetWeight() {
+		fail("Not yet implemented");
+	}
+
+

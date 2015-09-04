@@ -1,8 +1,11 @@
-package com.sapient.client.cui;
+package order;
 
 import java.sql.Date;
 import java.text.*;
 import java.util.*;
+
+import customer.NewCustomer;
+import payment.Payment;
 enum Status{ pending,dispatched,delivered}
 
 public class Order {

@@ -1,19 +1,20 @@
-package com.sapient.client.cui;
+package customer;
 
 public class NewCustomer {
-	Object name;
-	Object address;
+	private String name;
+	private String  address;
 	Object order;
-	public Object getName() {
+	
+	public String getName() {
 		return name;
 	}
-	public void setName(Object name) {
+	public void setName(String name) {
 		this.name = name;
 	}
-	public Object getAddress() {
+	public String getAddress() {
 		return address;
 	}
-	public void setAddress(Object address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 	public Object getOrder() {
