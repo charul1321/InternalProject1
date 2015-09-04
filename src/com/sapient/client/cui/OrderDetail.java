@@ -1,20 +1,20 @@
 package com.sapient.client.cui;
 
 public class OrderDetail {
-Object quantity;
-Object taxStatus;
+int quantity;
+boolean taxStatus;
 Order order;
 Item item;
 public Object getQuantity() {
 	return quantity;
 }
-public void setQuantity(Object quantity) {
+public void setQuantity(int quantity) {
 	this.quantity = quantity;
 }
-public Object getTaxStatus() {
+public boolean getTaxStatus() {
 	return taxStatus;
 }
-public void setTaxStatus(Object taxStatus) {
+public void setTaxStatus(boolean taxStatus) {
 	this.taxStatus = taxStatus;
 }
 public Order getOrder() {
@@ -30,5 +30,10 @@ public void setItem(Item item) {
 	this.item = item;
 }
 
-
+public double calcSubTotal()
+{   return item.getPriceForQuantity()*quantity;
+	}
+public double calcWeight()
+{   return item.getShippingWeight()+item.getWeight();
+	}
 }

@@ -1,9 +1,11 @@
 package com.sapient.client.cui;
 
 public class Item {
+	
 	private double shippingWeight;
 	private String description;
-	private OrderDetail orderdetail;
+	private double price;
+private OrderDetail orderdetail;
 	
 	public double getShippingWeight() {
 		return shippingWeight;
@@ -11,7 +13,7 @@ public class Item {
 	public void setShippingWeight(double shippingWeight) {
 		this.shippingWeight = shippingWeight;
 	}
-	public String getDescription() {
+	public String getDescription(){
 		return description;
 	}
 	public void setDescription(String description) {
@@ -20,9 +22,18 @@ public class Item {
 	public OrderDetail getOrderdetail() {
 		return orderdetail;
 	}
-	public void setOrderdetail(OrderDetail orderdetail) {
-		this.orderdetail = orderdetail;
+	public void setOrderdetail(OrderDetail orderDetail){
+		this.orderdetail = orderDetail;
 	}
 	
-
+ public double getPriceForQuantity()
+ {
+	 return price;
+ }
+ public double getWeight()
+ {
+	 return shippingWeight;
+ }
 }
+
+
